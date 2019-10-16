@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SERPAutoFulfillment.Views"
+             NavigationPage.HasNavigationBar="false"
+             x:Class="SERPAutoFulfillment.Views.MainMyVehiclePage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand">
+
+            <local:TopNavigateView BindingContext="{Binding}" />
+
+            <StackLayout>
+                <Label Margin="20, 10, 20, 10" Text="SELECT YOUR VEHICLE" TextColor="{StaticResource PrimaryRed}" FontSize="14" FontAttributes="Bold"/>
+                <Frame BackgroundColor="#EBEBEB" Margin="30, 0, 30, 10" Padding="40, 0, 15, 0" HeightRequest="40" CornerRadius="5">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">  
+                        <Label Text="Chicago 001" TextColor="#242A37" FontSize="17" HorizontalOptions="StartAndExpand"/>
+                        <Image Source="right_arrow.png" VerticalOptions="Center" HorizontalOptions="End" HeightRequest="13" WidthRequest="18" />
+                    </StackLayout>
+                </Frame>
+
+                <BoxView HeightRequest="1" Color="#707070"/>
+
+                <ListView x:Name="lvVehicleSelect" SelectionMode="None" ItemsSource="{Binding VehicleList}" IsVisible="{Binding HasVehicles}" HasUnevenRows="True" BackgroundColor="Transparent" SeparatorColor="#707070" Margin="0">
+                    <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                        <Frame BackgroundColor="Transparent" HasShadow="False" Padding="10, 0, 0, 0">
+                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                <StackLayout VerticalOptions="Center">
+                                    <Image HorizontalOptions="Center"  HeightRequest="64" WidthRequest="64" Source="{Binding TruckImage}"/>
+                                </StackLayout>
+                                <StackLayout Padding="0" VerticalOptions="Center" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding TruckName}" HorizontalOptions="FillAndExpand" TextColor="Black" FontSize="14" BackgroundColor="#EBEBEB" HeightRequest="24"/>
+                                    <StackLayout Orientation="Horizontal" Spacing="60" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                        <Image HeightRequest="30" WidthRequest="43" Source="vehicle_view.png" >
+                                            <Image.GestureRecognizers>
+                                                <!--<TapGestureRecognizer Command="{Binding Path=BindingContext.VehicleViewCommand, Source={x:Reference lvVehicleSelect}}" CommandParameter="{Binding .}" />-->
+                                                <TapGestureRecognizer Tapped="TapGestureVehicleView_Tapped" NumberOfTapsRequired="1" CommandParameter="{Binding .}"/>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Image HeightRequest="30" WidthRequest="43" Source="vehicle_select.png">
+                                            <Image.GestureRecognizers>
+                                                <!--<TapGestureRecognizer Command="{Binding Path=BindingContext.VehicleSelectCommand, Source={x:Reference lvVehicleSelect}}" CommandParameter="{Binding .}" />-->
+                                                <TapGestureRecognizer Tapped="TapGestureVehicleSelect_Tapped" NumberOfTapsRequired="1" CommandParameter="{Binding .}"/>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Image HeightRequest="39" WidthRequest="39" Source="photo_demo.png" >
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Path=BindingContext.ContactDriverCommand, Source={x:Reference lvVehicleSelect}}" CommandParameter="{Binding .}" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

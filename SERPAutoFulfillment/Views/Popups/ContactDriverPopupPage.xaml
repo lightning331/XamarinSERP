@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    x:Class="SERPAutoFulfillment.Views.ContactDriverPopupPage">
+    <!--You can set an animation in the xaml file or in the csharp code behind-->
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <!--You can use any elements here which are extended from Xamarin.Forms.View-->
+
+    <Frame HorizontalOptions="FillAndExpand"
+           VerticalOptions="CenterAndExpand"
+           Margin="20"
+           CornerRadius="20">
+        <StackLayout Orientation="Horizontal">
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <Image Source="contact.png"
+                    HorizontalOptions="Center"
+                    WidthRequest="75"
+                    HeightRequest="65"
+                    Aspect="AspectFit" />
+                <Image Source="photo_demo.png"
+                    Margin="0, 10, 0, 0"
+                    HorizontalOptions="Center"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    Aspect="AspectFit" />
+            </StackLayout>
+
+            <BoxView Color="LightGray" WidthRequest="1" />
+
+            <StackLayout Orientation="Vertical"
+                         HorizontalOptions="FillAndExpand">
+                <Label
+                    Text="CONTACT DRIVER"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource PrimaryRed}" />
+
+                <Label
+                    Text="First name: Orestes&#x0a;Last Name: Rivero&#x0a;work# 786.345.2321&#x0a;Cell# 786.345.2321&#x0a;email name@domainname.com"
+                    FontSize="14"
+                    Margin="0,0,0,20" />
+
+                <StackLayout HorizontalOptions="EndAndExpand">
+                    <Button
+                        BackgroundColor="Transparent"
+                        Padding="0"
+                        ImageSource="btn_exit"
+                        Command="{Binding ExitCommand}"
+                        HorizontalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SERPAutoFulfillment.Views"
+             xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="SERPAutoFulfillment.Views.VehicleInventoryItemPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand">
+
+            <local:TopNavigateView BindingContext="{Binding}" />
+
+            <StackLayout Margin="20, 10, 20, 10" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Image HeightRequest="77" WidthRequest="77" Source="truck_demo3.png" VerticalOptions="CenterAndExpand" />
+                <StackLayout Margin="20, 0, 0, 0">
+                    <Label Text="TRUCK# 7851" TextColor="Black" FontSize="18"/>
+                    <Label Text="2011 Ford - E350" FontSize="14"/>
+                </StackLayout>
+                <Image HeightRequest="63" WidthRequest="63" Source="vehicle_select_text.png" HorizontalOptions="EndAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureImage_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+            <ListView x:Name="lvInventory"
+                      SelectionMode="None"
+                      ItemsSource="{Binding InventoryList}"
+                      HasUnevenRows="True"
+                      BackgroundColor="Transparent"
+                      SeparatorVisibility="None">
+                <ListView.Behaviors>
+                    <behaviors:EventToCommandBehavior EventName="ItemTapped"
+                                                        EventArgsParameterPath="Item"
+                                                        Command="{Binding InventorySelectedCommand}" />
+                </ListView.Behaviors>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Appearing="ViewCell_OnAppearing">
+                            <StackLayout>
+                                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="20, 5, 20, 5">
+                                    <Image VerticalOptions="CenterAndExpand" HeightRequest="58" WidthRequest="56" Source="{Binding ImageUrl}"/>
+                                    <StackLayout Padding="10, 0, 0, 0" VerticalOptions="Center" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding Description}" HorizontalOptions="FillAndExpand" FontSize="16"/>
+                                        <StackLayout Orientation="Horizontal" Spacing="20" VerticalOptions="EndAndExpand">
+                                            <StackLayout Orientation="Horizontal" Spacing="2">
+                                                <Label Text="Profiled:" FontSize="14" />
+                                                <Label Text="{Binding Profiled}"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" Spacing="2">
+                                                <Label Text="Loaded:" FontSize="14" />
+                                                <Label Text="{Binding Loaded}"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" Spacing="2">
+                                                <Label Text="Maint:" FontSize="14" />
+                                                <Label Text="{Binding Maint}"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" Spacing="2">
+                                                <Label Text="Ready:" FontSize="14" TextColor="Green"/>
+                                                <Label Text="{Binding Ready}" TextColor="Green"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <StackLayout IsVisible="{Binding isDetailVisible}" >
+                                    <BoxView HeightRequest="1" BackgroundColor="{StaticResource PrimaryRed}"/>
+                                    <Image Source="red_below_arrow.png" Margin="20, -6, 0, 0" HorizontalOptions="Start"/>
+                                    <Frame Margin="8, 0, 8, 0" Padding="15, 20" CornerRadius="30" HasShadow="False" BackgroundColor="#F9F1F1">
+                                         <StackLayout Orientation="Vertical" Spacing="10" VerticalOptions="EndAndExpand">
+                                            <StackLayout Orientation="Horizontal" Spacing="2">
+                                                <Label Text="Tag:" WidthRequest="60" TextColor="Black" FontAttributes="Bold" FontSize="14" />
+                                                <Label Text="437284823" TextColor="Black" FontAttributes="Bold" FontSize="14" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" Spacing="2">
+                                                <Label Text="Mfr:" WidthRequest="60" TextColor="Black" FontAttributes="Bold" FontSize="14" />
+                                                <Label Text="{Binding Details.Manufacturer}" TextColor="Black" FontAttributes="Bold" FontSize="14" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" Spacing="2">
+                                                <Label Text="Model:" WidthRequest="60" TextColor="Black" FontAttributes="Bold" FontSize="14" />
+                                                <Label Text="{Binding Details.ModelName}" TextColor="Black" FontAttributes="Bold" FontSize="14" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" Spacing="2">
+                                                <Label Text="Model#:" WidthRequest="60" TextColor="Black" FontAttributes="Bold" FontSize="14" />
+                                                <Label Text="{Binding Details.ModelSerial}" TextColor="Black" FontAttributes="Bold" FontSize="14" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" Spacing="2">
+                                                <Label Text="Status:" WidthRequest="60" TextColor="Black" FontAttributes="Bold" FontSize="14" />
+                                                <Label Text="{Binding Details.Status}" TextColor="Black" FontAttributes="Bold" FontSize="14" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                    <BoxView HeightRequest="1" BackgroundColor="{StaticResource PrimaryRed}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

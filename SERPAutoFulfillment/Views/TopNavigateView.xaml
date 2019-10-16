@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SERPAutoFulfillment.Views.TopNavigateView">
+    <ContentView.Content>
+      <Frame HeightRequest="39"
+                   HasShadow="False"
+                   BackgroundColor="#EEEEEE"
+                   Padding="10, 0, 0, 0">
+                <Grid VerticalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.15*" />
+                        <ColumnDefinition Width="0.7*" />
+                        <ColumnDefinition Width="0.15*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="logo.png"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       WidthRequest="28"
+                       HeightRequest="28"
+                       Aspect="AspectFit" />
+                    <Label Grid.Column="1"
+                           Text="App: 123  Web: 2.5  DB: SERP-Alpha Software Platform powered by SeriousERP"
+                           TextColor="Black"
+                           FontSize="12"
+                           MaxLines="2"
+                           HorizontalTextAlignment="Center"
+                           />
+
+                </Grid>
+            </Frame>
+
+    </ContentView.Content>
+</ContentView>

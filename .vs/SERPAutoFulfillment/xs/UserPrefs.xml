@@ -1,0 +1,64 @@
+﻿<Properties StartupConfiguration="{FA6F0D6A-DF99-4BB4-91CC-1B4A7A723005}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SERPAutoFulfillment/Views/MainTabPage.xaml">
+    <Files>
+      <File FileName="SERPAutoFulfillment/Views/MainTabPage.xaml" Line="22" Column="1" />
+      <File FileName="SERPAutoFulfillment/App.xaml.cs" />
+      <File FileName="SERPAutoFulfillment/Views/EquipmentLookup/MainEquipmentLookupPage.xaml" />
+      <File FileName="SERPAutoFulfillment/Views/EquipmentLookup/MainEquipmentLookupPage.xaml.cs" />
+      <File FileName="SERPAutoFulfillment/ViewModels/EquipmentLookup/MainEquipmentLookupPageViewModel.cs" />
+      <File FileName="SERPAutoFulfillment/Views/MainTabPage.xaml.cs" />
+      <File FileName="SERPAutoFulfillment/Views/MyVehicle/VehicleInventoryItemPage.xaml" />
+      <File FileName="SERPAutoFulfillment/Views/MyVehicle/MainMyVehiclePage.xaml" />
+      <File FileName="SERPAutoFulfillment/Views/Login/LoginPage.xaml" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SERPAutoFulfillment" expanded="True" selected="True">
+            <Node name="SERPAutoFulfillment" expanded="True">
+              <Node name="Business" expanded="True">
+                <Node name="Models" expanded="True">
+                  <Node name="EquipmentLookup" expanded="True" />
+                  <Node name="MyVehicle" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Helpers" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="Styles" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="EquipmentLookup" expanded="True" />
+                <Node name="Login" expanded="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="EquipmentLookup" expanded="True">
+                  <Node name="MainEquipmentLookupPage.xaml" expanded="True" />
+                </Node>
+                <Node name="Login" expanded="True">
+                  <Node name="LoginPage.xaml" expanded="True" />
+                </Node>
+                <Node name="MyVehicle" expanded="True">
+                  <Node name="MainMyVehiclePage.xaml" expanded="True" />
+                  <Node name="VehicleInventoryItemPage.xaml" expanded="True" />
+                </Node>
+                <Node name="MainTabPage.xaml" expanded="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True" />
+            </Node>
+            <Node name="SERPAutoFulfillment.Android" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="drawable" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.SERPAutoFulfillment.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" PreferredExecutionTarget="Android.nexus_6p" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

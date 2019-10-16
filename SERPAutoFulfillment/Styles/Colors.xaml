@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Color x:Key="PrimaryRed">#AB192D</Color>
+
+    <Color x:Key="EvenRowBackground">White</Color>
+    <Color x:Key="OddRowBackground">#F5F5F5</Color>
+    <Color x:Key="TappedRowBackground">#cecece</Color>
+
+</ResourceDictionary>

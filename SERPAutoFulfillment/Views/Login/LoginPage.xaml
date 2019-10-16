@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SERPAutoFulfillment.Views"
+             x:Class="SERPAutoFulfillment.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand">
+
+            <local:TopNavigateView BindingContext="{Binding}" />
+            
+            <Entry Margin="15, 90, 15, 0" Placeholder="Username" Text="{Binding UserName}"/>
+            <Entry Margin="15, 10, 20, 20" Placeholder="Password" Text="{Binding Password}" IsPassword="True"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Remember password" VerticalOptions="Center"/>
+                <Switch Margin="10, 0, 0, 0" IsToggled="{Binding IsPasswordSave}" OnColor="{StaticResource PrimaryRed}" Scale="1.5" VerticalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="0, 40, 0, 0">
+                <Frame CornerRadius="20"
+                       HasShadow="True"
+                       BackgroundColor="{StaticResource PrimaryRed}"
+                       Opacity="0.5"
+                       Margin="-20, 0, 0, 0"
+                       Padding="0, 0, 20, 0"
+                       WidthRequest="150" HeightRequest="40"
+                       HorizontalOptions="StartAndExpand">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapForgotPassword" />
+                    </Frame.GestureRecognizers>
+                    <Label Text="Forgot pw" TextColor="White" 
+                            HorizontalTextAlignment="End"
+                           VerticalTextAlignment="Center" />
+                </Frame>
+                <Frame CornerRadius="20"
+                       HasShadow="True"
+                       BackgroundColor="{StaticResource PrimaryRed}"
+                       Margin="0, 0, -20, 0"
+                       Padding="20, 0, 0, 0"
+                       WidthRequest="150" HeightRequest="40"
+                       HorizontalOptions="EndAndExpand">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapLogin" />
+                    </Frame.GestureRecognizers>
+                    <Label Text="Login" TextColor="White" 
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Center" />
+                </Frame>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Margin="0, 0, 0, 10">
+                <Image Source="truck1.png"
+                   HorizontalOptions="Center"
+                   Aspect="AspectFit" />
+                <Label Text="Fulfillment app" TextColor="{StaticResource PrimaryRed}" Opacity="0.6" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

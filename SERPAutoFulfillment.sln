@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SERPAutoFulfillment.Android", "SERPAutoFulfillment.Android\SERPAutoFulfillment.Android.csproj", "{FA6F0D6A-DF99-4BB4-91CC-1B4A7A723005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SERPAutoFulfillment", "SERPAutoFulfillment\SERPAutoFulfillment.csproj", "{3FF1C922-08B1-4933-8DBD-A34EAEA219A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA6F0D6A-DF99-4BB4-91CC-1B4A7A723005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA6F0D6A-DF99-4BB4-91CC-1B4A7A723005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA6F0D6A-DF99-4BB4-91CC-1B4A7A723005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA6F0D6A-DF99-4BB4-91CC-1B4A7A723005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FF1C922-08B1-4933-8DBD-A34EAEA219A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FF1C922-08B1-4933-8DBD-A34EAEA219A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FF1C922-08B1-4933-8DBD-A34EAEA219A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FF1C922-08B1-4933-8DBD-A34EAEA219A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
